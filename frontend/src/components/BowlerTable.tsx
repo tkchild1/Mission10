@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import type { Bowler } from '../types/Bowlers';
 
+// BowlerTable component - fetches and displays bowler data from the API
 function BowlerTable() {
     
+    // State to hold the list of bowlers
     const [bowlers, setBowlers] = useState<Bowler[]>([]);
     useEffect(() => {
         const fetchBowler = async () => {
@@ -13,6 +15,7 @@ function BowlerTable() {
         fetchBowler();
     }, []);
     
+    // Render the table of bowlers
     return (
         <>
             <table>
@@ -29,6 +32,7 @@ function BowlerTable() {
                 </thead>
                 <tbody>
                     {
+                        // Map over the bowlers and create a table row for each one
                         bowlers.map((b) => (
                             <tr key={b.bowlerId}>
                                 <td>{b.bowlerFirstName} {b.bowlerMiddleInit} {b.bowlerLastName}</td>

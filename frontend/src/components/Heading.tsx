@@ -1,3 +1,4 @@
+// Heading component - displays the heading and description for the bowling league
 function Heading() {
     return (
         <div>
